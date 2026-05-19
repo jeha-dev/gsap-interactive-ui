@@ -1,0 +1,165 @@
+/* RESET RULES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+:root {
+  --black: #1a1a1a;
+  --white: #fff;
+  --gray: #ccc;
+  --darkgreen: #18846C;
+  --lightbrown: antiquewhite;
+  --darkblack: rgba(0,0,0,0.8);
+  --minRangeValue: 280px;
+}
+
+* {
+  margin: 0;
+  padding: 0;  
+  border: none;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+}
+
+body {
+  margin: 50px 0;
+  color: var(--black);
+  font: 1rem/1.3 sans-serif;
+}
+
+input[type="range"] {
+  appearance: none;
+  cursor: pointer;
+  outline: none;
+  width: 100%;
+  height: 1.5rem;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+
+.gallery {
+  padding: 0 2rem;
+}
+
+.container {
+  max-width: 1030px;
+  margin: 0 auto;
+}
+
+.d-none {
+  display: none;
+}
+
+
+/* TOOLBAR
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.search-wrapper input[type='search']{
+   -webkit-appearance: textfield;
+   padding: 8px 3px;
+   font-size: 12px;
+   border-bottom: 1px solid #333;
+}
+.search-wrapper .counter {
+  margin-top: 8px;
+   font-size: 14px;
+}
+.view-options {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 16px;
+}
+.view-options .zoom input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 1rem;
+  height: 1rem;
+  border: none;
+  border-radius: 50%;
+  background-color: #007475;
+  transition: all 0.15s ease-in-out;
+  margin-top: calc((0.35rem - 1rem) * 0.5);
+}
+.view-options .zoom input[type="range"]:focus::-webkit-slider-thumb {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 .25rem rgba(0, 116, 117, .4);
+}
+.view-options .zoom input[type="range"]::-webkit-slider-thumb:active { 
+    background-color: #99c7c7;
+}
+.view-options .zoom input[type="range"]::-webkit-slider-runnable-track { /* Webkit 기반 브라우저 */
+    cursor: pointer;
+    width: 100%;
+    height: 0.3rem;
+    background-color: #d3d9de;
+    border-radius: 0.25rem;
+}
+
+
+/* IMAGE LIST
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.image-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 24px;
+}
+.image-list li{
+  flex: 1 1 0;
+  min-width: 30%;
+}
+.image-list figure figcaption {
+  padding: 12px 14px;
+  font-size: 14px;
+}
+.image-list figure figcaption p {
+  margin-top: 8px;
+  font-size: 12px;
+}
+
+/* GRID VIEW
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.grid-view {
+  flex-direction: column;
+}
+.grid-view figure {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.grid-view figure img{
+  max-width: 200px;
+}
+.grid-view figure figcaption {
+  flex-grow: 1;
+  background-color: rgb(255, 241, 228);
+}
+
+
+/* LIST VIEW
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+/* MQ
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
