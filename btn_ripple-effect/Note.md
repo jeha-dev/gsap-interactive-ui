@@ -28,28 +28,23 @@ animation: ripple-effect 1000ms linear;
 - 이런 식으로만 적용할 경우 1회성 애니메이션임
 
 
- /* (1) x: 버튼 왼쪽시작위치, width: 버튼 가로 길이
+(1) x: 버튼 왼쪽시작위치, width: 버튼 가로 길이
     clientX - x -> 버튼 x값 기준에서 얼마만큼의 지점을 클릭한 것인지 받아옴
-    
-    ex) clientX : 300, x : 200 -> 버튼의 어느 지점에서 클릭했어? 버튼 가로의 100지점에서 클릭(버튼 x시작 0)
+    (ex) clientX : 300, x : 200 -> 버튼의 어느 지점에서 클릭했어? 버튼 가로의 100지점에서 클릭(버튼 x시작 0)
 
-    (2) radius 하는 이유; 원의 중심을 클릭 위치에 맞추기 위함 ->  left를 원의 중심위치가 아닌, 원의 왼쪽 끝 위치를 의미하기 때문
-    원의 중심이 클릭 위치보다 오른쪽으로 밀리게 될 때 원의 왼쪽 끝을 클릭 위치보다 반지름 만큼만 왼쪽으로 옮겨줘야 함
-
-
+(2) radius 하는 이유; 원의 중심을 클릭 위치에 맞추기 위함 ->  left를 원의 중심위치가 아닌, 원의 왼쪽 끝 위치를 의미하기 때문. 원의 중심이 클릭 위치보다 오른쪽으로 밀리게 될 때 원의 왼쪽 끝을 클릭 위치보다 반지름 만큼만 왼쪽으로 옮겨줘야 함
     정리 : 버튼 내 클릭한 위치를 구한 뒤, 원의 중심이 클릭 지점에 오도록 반지름만큼 왼쪽으로 뺌
 
 
-    (3) width * 100 + '%' 하는 이유 : 
+(3) width * 100 + '%' 하는 이유 : 
     - px 값을 %로 바꾸는 계산
-    ex) 버튼 width 200px, 원의 왼쪽 위치가 50px이라면, left는 25%로 나옴
-
-*/
-
-/*
+    (ex) 버튼 width 200px, 원의 왼쪽 위치가 50px이라면, left는 25%로 나옴
+    ```
     const clickPositionButton = clientX - x;
     const circleStartPosition = clickPositionInButton = radius;
     const left = (circleStartPosition / buttonWidth) * 100 + '%';
-*/
+    ```
 
->  const { clientX, clientY } = e; // === const clientX = e.clientX
+- 구조 분해 할당
+>  const { clientX, clientY } = e;
+> === const clientX = e.clientX
