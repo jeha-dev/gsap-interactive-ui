@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS button click effect 01</title>
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <button type="button" class="btn-default">CLICK</button>
+    <script>
+        const btn = document.querySelector(".btn-default");
+
+        const onClick = e => {
+            const { x, y, width, height } = btn.getBoundingClientRect();
+            const radius = Math.sqrt(width * width + height * height);
+            btn.style.setProperty('--diameter', radius * 2 + 'px');
+
+            const { clientX, clientY } = e;
+
+            // console.log(e.clientX);
+
+            const left = (clientX - x - radius) / width * 100 + '%';
+
+            const top = (clientY - y - radius) / height * 100 + '%';
+
+            btn.style.setProperty('--left', left);
+            btn.style.setProperty('--top', top);
+            btn.style.setProperty('--ani', '');
+
+            setTimeout(()=> {
+                btn.style.setProperty('--ani', 'ripple-effect 430ms linear');
+            });
+
+        }
+
+        btn.addEventListener('click', onClick);
+    </script>
+</body>
+</html>
